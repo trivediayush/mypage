@@ -683,3 +683,82 @@
     transition-timing-function: ease-out;
   }
 }
+
+
+/* Subtle DevOps infrastructure motion, kept behind all portfolio content. */
+@layer components {
+  .devops-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    color: var(--color-primary);
+    opacity: .7;
+    contain: strict;
+  }
+  .devops-network {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .55;
+  }
+  .devops-network line {
+    stroke: currentColor;
+    stroke-width: .075;
+    stroke-opacity: .16;
+    vector-effect: non-scaling-stroke;
+  }
+  .infra-node {
+    fill: currentColor;
+    opacity: .22;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .infra-node.is-animated { animation: infra-node-breathe 4.5s ease-in-out infinite; }
+  .infra-pulse {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: .12;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: infra-ripple 4.8s ease-out infinite;
+  }
+  .infra-packet { fill: var(--color-primary); opacity: 0; }
+  .infra-packet.is-animated { opacity: .55; }
+  .devops-glow {
+    position: absolute;
+    width: min(38vw, 30rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .045;
+    background: var(--color-primary);
+    animation: infra-drift 24s ease-in-out infinite alternate;
+  }
+  .devops-glow-one { top: 8%; right: -10%; }
+  .devops-glow-two { bottom: 4%; left: -14%; animation-delay: -12s; }
+  @keyframes infra-node-breathe {
+    0%, 100% { opacity: .16; transform: scale(.85); }
+    50% { opacity: .48; transform: scale(1.2); }
+  }
+  @keyframes infra-ripple {
+    0% { opacity: .3; transform: scale(.4); }
+    75%, 100% { opacity: 0; transform: scale(2.6); }
+  }
+  @keyframes infra-drift {
+    from { transform: translate3d(-3%, -2%, 0); }
+    to { transform: translate3d(5%, 4%, 0); }
+  }
+  @media (max-width: 640px) {
+    .devops-background { opacity: .45; }
+    .devops-network { inset: 4% -25%; width: 150%; height: 92%; }
+    .devops-glow { filter: blur(50px); opacity: .03; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .infra-node.is-animated, .infra-pulse, .devops-glow { animation: none !important; }
+    .infra-packet.is-animated { opacity: .25; }
+  }
+}
