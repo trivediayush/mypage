@@ -19,7 +19,7 @@ export function Intro() {
           <div className="hero-copy relative z-10 flex min-h-[34rem] flex-col justify-center p-7 md:min-h-[40rem] md:p-10 lg:p-12">
             <div className="max-w-[43rem]">
               <p className="font-mono text-[0.62rem] tracking-[0.2em] text-[#3155d9] uppercase">
-                Cloud infrastructure · platform engineering · delivery systems
+                DEVOPS ENGINEERING · CLOUD INFRASTRUCTURE · AUTOMATION
               </p>
               <h1
                 id="intro-title"
@@ -28,12 +28,12 @@ export function Intro() {
                   (shown ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")
                 }
               >
-                Build systems.
+                Engineer reliable systems.
                 <br />
-                <span className="text-[#5365a8]">Make them dependable.</span>
+                <span className="text-[#5365a8]">Automate the complex.</span>
               </h1>
               <p className="mt-7 max-w-xl text-base leading-7 text-[#39435f] sm:text-lg">
-                {profile.name} — {profile.role}. Cloud infrastructure, Kubernetes, CI/CD and automation across AWS, Azure and Google Cloud.
+                {profile.name} — {profile.role}. I build and maintain cloud infrastructure, Kubernetes environments, and delivery workflows with an emphasis on repeatability, security, and operability.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#work" className="inline-flex items-center gap-2 rounded-full bg-[#3155d9] px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5">
@@ -47,7 +47,7 @@ export function Intro() {
           </div>
 
           <div className="absolute right-5 top-5 z-10 hidden rounded-full border border-[#c6cde4] bg-white/80 px-3 py-1.5 font-mono text-[0.58rem] tracking-[0.14em] text-[#5365a8] uppercase backdrop-blur sm:block">
-            live infrastructure map
+            infrastructure · delivery · operations
           </div>
         </div>
 
