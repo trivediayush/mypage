@@ -510,3 +510,116 @@
   .writing-card:hover,
   .contact-card:hover { transform: none; }
 }
+
+
+/* Editorial skills index: typography and whitespace instead of skill cards. */
+@layer components {
+  .skills-editorial { border-top: 1px solid var(--color-border); }
+  .skills-editorial-row {
+    display: grid;
+    gap: 1.1rem;
+    padding: 1.45rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .skills-editorial-heading { display: flex; align-items: baseline; gap: .85rem; }
+  .skills-editorial-index {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: .62rem;
+    letter-spacing: .12em;
+  }
+  .skills-editorial-heading h3 {
+    font-size: .92rem;
+    font-weight: 600;
+    letter-spacing: -.025em;
+  }
+  .skills-editorial-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .skills-wordmark { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.05rem; }
+  .skills-word {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    color: color-mix(in oklch, var(--color-foreground) 82%, transparent);
+    font-size: .86rem;
+    letter-spacing: -.015em;
+    transition: color 180ms ease, transform 180ms ease;
+  }
+  .skills-word-icon { display: inline-flex; color: var(--color-muted-foreground); transition: color 180ms ease; }
+  .skills-word:hover { color: var(--color-primary); transform: translateY(-1px); }
+  .skills-word:hover .skills-word-icon { color: var(--color-primary); }
+  .skills-row-arrow { display: none; flex: 0 0 auto; color: var(--color-muted-foreground); transition: color 180ms ease, transform 180ms ease; }
+  .skills-editorial-row:hover .skills-row-arrow { color: var(--color-primary); transform: translate(2px, -2px); }
+  .skills-footnote {
+    margin-top: 1.25rem;
+    color: var(--color-muted-foreground);
+    font-family: var(--font-mono);
+    font-size: .62rem;
+    line-height: 1.8;
+    letter-spacing: .035em;
+  }
+  .portfolio-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 420ms ease, visibility 420ms ease;
+  }
+  .portfolio-preloader.is-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+  .portfolio-preloader.is-dismissed { opacity: 0; visibility: hidden; pointer-events: none; }
+  .preloader-inner { width: min(20rem, calc(100vw - 3rem)); }
+  .preloader-mark {
+    display: grid;
+    place-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+  .preloader-kicker {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: .58rem;
+    letter-spacing: .14em;
+  }
+  .preloader-kicker svg { animation: preloader-pulse 1s ease-in-out infinite; }
+  .preloader-name { margin-top: .8rem; font-size: 2rem; font-weight: 600; letter-spacing: -.06em; }
+  .preloader-name span { color: var(--color-primary); }
+  .preloader-track { height: 2px; margin-top: 1.5rem; overflow: hidden; background: var(--color-border); }
+  .preloader-track span {
+    display: block;
+    width: 42%;
+    height: 100%;
+    background: var(--color-primary);
+    transform-origin: left;
+    animation: preloader-progress 850ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .preloader-status { margin-top: .7rem; color: var(--color-muted-foreground); font-family: var(--font-mono); font-size: .58rem; letter-spacing: .04em; }
+  @keyframes preloader-progress { from { transform: scaleX(.04); } to { transform: scaleX(2.35); } }
+  @keyframes preloader-pulse { 50% { opacity: .35; } }
+  @media (min-width: 768px) {
+    .skills-editorial-row { grid-template-columns: 11rem minmax(0, 1fr); align-items: center; gap: 2rem; padding: 1.7rem 0; }
+    .skills-editorial-content { gap: 1.5rem; }
+    .skills-row-arrow { display: inline-flex; }
+    .skills-wordmark { gap: .45rem 1.25rem; }
+    .skills-word { font-size: .9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skills-word, .skills-word-icon, .skills-row-arrow, .portfolio-preloader { transition: none; }
+    .preloader-kicker svg, .preloader-track span { animation: none; }
+  }
+}
