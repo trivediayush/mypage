@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { profile } from "@/content/portfolio";
 import { useReveal } from "@/hooks/use-reveal";
+import { ThreeHero } from "./ThreeHero";
 
 export function Intro() {
   const { ref, shown } = useReveal<HTMLDivElement>();
@@ -8,7 +9,12 @@ export function Intro() {
   return (
     <section id="intro" aria-labelledby="intro-title" className="scroll-mt-24">
       <div ref={ref} className="mx-auto w-full max-w-6xl px-6 pb-16 pt-28 md:px-10 md:pb-24 md:pt-36">
-        <div className="hero-stage relative mb-10 overflow-hidden border-y border-border bg-background/70 py-14 md:py-24">\n          <div className="hero-copy relative z-10 flex flex-col justify-center px-2 md:px-8">
+        <div className="hero-stage relative mb-10 min-h-[34rem] overflow-hidden border border-border bg-[#eef2ff] md:min-h-[40rem]">
+          <div className="hero-grid absolute inset-0" />
+          <div className="hero-visual absolute inset-y-0 right-[-7%] z-[1] w-[64%] min-w-[30rem] md:right-[-3%] md:w-[59%] lg:right-[-1%] lg:w-[57%]">
+            <ThreeHero />
+          </div>
+          <div className="hero-copy relative z-10 flex min-h-[34rem] flex-col justify-center p-7 md:min-h-[40rem] md:p-10 lg:p-12">
             <div className="max-w-[43rem]">
               <p className="font-mono text-[0.62rem] tracking-[0.2em] text-[#3155d9] uppercase">
                 DEVOPS ENGINEER
@@ -37,13 +43,16 @@ export function Intro() {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="absolute right-5 top-5 z-10 hidden rounded-full border border-[#c6cde4] bg-white/80 px-3 py-1.5 font-mono text-[0.58rem] tracking-[0.14em] text-[#5365a8] uppercase backdrop-blur sm:block">
-            infrastructure · delivery · operations
+        <div className="grid border-y border-border sm:grid-cols-1">
+          <div className="py-5">
+            <p className="text-2xl font-medium tracking-tight text-foreground">2026</p>
+            <p className="mt-1 font-mono text-[0.58rem] tracking-[0.16em] text-muted-foreground uppercase">Current DevOps &amp; Cloud Role</p>
           </div>
         </div>
 
-                <a href="#experience" className="mt-7 inline-flex items-center gap-2 font-mono text-[0.65rem] tracking-[0.16em] text-muted-foreground uppercase hover:text-primary">
+        <a href="#experience" className="mt-7 inline-flex items-center gap-2 font-mono text-[0.65rem] tracking-[0.16em] text-muted-foreground uppercase hover:text-primary">
           Scroll to experience <ArrowDown className="h-3.5 w-3.5" />
         </a>
       </div>
