@@ -11,6 +11,7 @@ import { ClientWork } from "@/components/portfolio/ClientWork";
 import { Contact } from "@/components/portfolio/Contact";
 import { SiteFooter } from "@/components/portfolio/SiteFooter";
 import { PortfolioPreloader } from "@/components/portfolio/PortfolioPreloader";
+import { DevOpsBackground } from "@/components/portfolio/DevOpsBackground";
 import { profile, services } from "@/content/portfolio";
 
 const title = "Ayush Trivedi | DevOps Engineer & Cloud Infrastructure";
@@ -99,6 +100,7 @@ function Portfolio() {
   return (
     <div className="portfolio-shell min-h-screen bg-background">
       <PortfolioPreloader />
+      <DevOpsBackground />
       <NavRail />
       <main className="relative z-10">
         <Intro />
