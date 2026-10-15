@@ -28,7 +28,7 @@ export function Intro() {
               >
                 Engineer reliable systems.
                 <br />
-                <span className="text-[#5365a8]">Automate the complex.</span>
+                <span className="text-[#5365a8]">Automate the task.</span>
               </h1>
               <p className="mt-7 max-w-xl text-base leading-7 text-[#39435f] sm:text-lg">
                 Cloud infrastructure, Kubernetes, and delivery automation—with a focus on repeatability, security, and operational clarity.

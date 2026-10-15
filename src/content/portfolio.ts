@@ -43,10 +43,11 @@ export type Article = {
 
 export const profile = {
   name: "Ayush Trivedi",
-  role: "DevOps Engineer",
-  location: "Indore, India",
+  role: "DevOps and Platform Engineer",
+  location: "India",
+  tel: "91-7987788900",
   email: "ayushtrivedi11jan@gmail.com",
-  phones: ["+91-7987788900", "+91-7240890038"],
+  phones: ["+91-7987788900"],
   links: {
     linkedin: "https://www.linkedin.com/in/ayush-trivediin",
     github: "https://github.com/trivediayush",
@@ -106,7 +107,7 @@ export const roles: Role[] = [
     ],
   },
   {
-    title: "DevOps Engineer",
+    title: "DevOps Engineer Intern",
     company: "VKAPS IT Solutions Pvt. Ltd.",
     period: "Jun 2025 — Oct 2025",
     summary:
@@ -130,31 +131,30 @@ export const roles: Role[] = [
       "Gained practical exposure to cloud infrastructure, automation, and containerization in production environments.",
     ],
   },
-  {
-    title: "Industrial Training",
-    company: "Allsoft Solutions and Services Pvt. Ltd.",
-    period: "Aug 2024 — Sep 2024",
-    summary:
-      "Built foundational hands-on experience across cloud, DevOps, containers, and automation.",
-    details: [
-      "Worked with Jenkins and GitLab CI, AWS and Azure, Docker and Kubernetes.",
-      "Used Bash and Python for automation and scripting.",
-      "Learned infrastructure as code, deployment automation, and practical DevOps workflows.",
-    ],
-  },
 ];
 
 export const expertise: { category: string; tools: string[] }[] = [
-  { category: "Cloud", tools: ["AWS", "Microsoft Azure"] },
+  { category: "Cloud", tools: ["AWS", "Microsoft Azure", "Azure DevOps"] },
   { category: "Kubernetes", tools: ["Kubernetes", "Helm", "ArgoCD", "Docker"] },
-  { category: "CI/CD", tools: ["Jenkins", "GitHub Actions", "Azure DevOps", "GitLab CI"] },
+  { category: "CI/CD", tools: ["Jenkins", "GitHub Actions", "GitLab CI"] },
   { category: "Infrastructure", tools: ["Terraform", "Ansible"] },
   { category: "Observability", tools: ["Grafana", "Prometheus", "OpenTelemetry", "ELK Stack"] },
-  { category: "Security", tools: ["SonarQube", "Trivy", "Key Vault", "External Secrets"] },
+  { category: "Security", tools: ["SonarQube", "Trivy"] },
   { category: "Systems & scripting", tools: ["Python", "Bash", "Git", "Linux"] },
 ];
 
 export const projects: Project[] = [
+  {
+    title: "Golden AMI Pipeline Pattern",
+    stack: "AWS · EC2 Image Builder · EventBridge · Inspector · Terraform",
+    status: "Engineering project",
+    problem:
+      "Manually hardened servers create configuration drift and make it difficult to maintain a consistent baseline.",
+    approach:
+      "Built an immutable-image pattern around scheduled image builds, patching, hardening, validation, and controlled AMI distribution.",
+    result:
+      "A reusable approach to producing standardized cloud base images instead of repeatedly configuring servers after launch.",
+  },
   {
     title: "GCP High Availability & Disaster Recovery Infrastructure",
     stack: "Google Cloud · Terraform · Ansible",
@@ -188,17 +188,6 @@ export const projects: Project[] = [
     result:
       "Security and quality feedback becomes part of the pull-request and build workflow, with failures visible before release.",
   },
-  {
-    title: "Golden AMI Pipeline Pattern",
-    stack: "AWS · EC2 Image Builder · EventBridge · Inspector · Terraform",
-    status: "Engineering project",
-    problem:
-      "Manually hardened servers create configuration drift and make it difficult to maintain a consistent baseline.",
-    approach:
-      "Built an immutable-image pattern around scheduled image builds, patching, hardening, validation, and controlled AMI distribution.",
-    result:
-      "A reusable approach to producing standardized cloud base images instead of repeatedly configuring servers after launch.",
-  },
 ];
 
 export const clientWork: ClientWork[] = [
@@ -223,11 +212,9 @@ export const education = {
 };
 
 export const certifications = [
+  { name: "Oracle Cloud Infrastructure 2025 Certified DevOps Professional", issuer: "Oracle" },
   { name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate", issuer: "Oracle" },
-  { name: "AWS APAC — Solutions Architecture Job Simulation", issuer: "AWS" },
-  { name: "Google Cloud Computing Foundation", issuer: "Google Cloud" },
-  { name: "Microservices Architecture and Implementation", issuer: "Certification" },
-  { name: "Cloud Application Developer", issuer: "Certification" },
+  { name: "Oracle Cloud Infrastructure 2025 Certified Architect Associate", issuer: "Oracle" },
 ];
 
 export const services: Service[] = [

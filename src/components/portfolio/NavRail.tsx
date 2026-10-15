@@ -44,7 +44,7 @@ export function NavRail() {
               aria-hidden="true"
               className="h-1.5 w-1.5 shrink-0 translate-y-[-0.1rem] bg-primary transition-transform duration-500 group-hover:scale-150"
             />
-            <span className="whitespace-nowrap font-mono tracking-[0.12em]">AT</span>
+            <span className="whitespace-nowrap font-mono tracking-[0.12em]">Ayush Trivedi</span>
           </a>
 
 
