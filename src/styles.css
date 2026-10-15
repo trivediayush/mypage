@@ -623,3 +623,27 @@
     .preloader-kicker svg, .preloader-track span { animation: none; }
   }
 }
+
+
+/* Final interaction polish across navigation, sections, and touch layouts. */
+@layer base {
+  html { scroll-padding-top: 6.5rem; }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+@layer components {
+  .site-section { scroll-margin-top: 6rem; }
+  .project-card, .experience-card, .client-card, .credential-card,
+  .service-card, .writing-card, .contact-card {
+    backface-visibility: hidden;
+  }
+  @media (hover: none) {
+    .project-card:hover, .experience-card:hover, .client-card:hover,
+    .credential-card:hover, .service-card:hover, .writing-card:hover,
+    .contact-card:hover { transform: none; }
+    .project-card:hover::before, .experience-card:hover::before,
+    .client-card:hover::before, .credential-card:hover::before,
+    .service-card:hover::before, .writing-card:hover::before,
+    .contact-card:hover::before { opacity: 0; }
+  }
+}
