@@ -762,3 +762,73 @@
     .infra-packet.is-animated { opacity: .25; }
   }
 }
+
+
+/* Light Git-flow background: branch lines, commits, merges, and moving signals. */
+@layer components {
+  .git-graph-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    color: #6478ce;
+    opacity: .82;
+    contain: strict;
+  }
+  .git-graph-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .62;
+  }
+  .git-branch {
+    fill: none;
+    stroke: url(#git-branch-gradient);
+    stroke-width: .18;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1.1 1.8;
+    vector-effect: non-scaling-stroke;
+  }
+  .main-branch { stroke-width: .24; stroke-dasharray: none; opacity: .75; }
+  .git-commit-dot { fill: #8192e8; stroke: #f8faff; stroke-width: .24; }
+  .git-commit-halo { fill: #a5b4fc; opacity: .16; }
+  .merge-commit .git-commit-dot { fill: #34b994; stroke: #f0fdf8; }
+  .git-flow { fill: #5b8df2; filter: drop-shadow(0 0 1.2px #93c5fd); }
+  .git-flow-two { fill: #8b80e8; }
+  .git-flow-three { fill: #34b994; }
+  .git-graph-label {
+    position: absolute;
+    color: #7784b2;
+    font: 500 .58rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .52;
+  }
+  .git-label-top { top: 23%; right: 8%; }
+  .git-label-bottom { bottom: 20%; left: 8%; }
+  .git-graph-background::before,
+  .git-graph-background::after {
+    content: "";
+    position: absolute;
+    width: min(34vw, 28rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #c7d2fe;
+    filter: blur(70px);
+    opacity: .12;
+  }
+  .git-graph-background::before { top: 5%; right: -12%; }
+  .git-graph-background::after { bottom: -10%; left: -12%; background: #a7f3d0; opacity: .09; }
+  @media (max-width: 640px) {
+    .git-graph-svg { width: 145%; max-width: none; left: -22%; }
+    .git-graph-label { font-size: .5rem; }
+    .git-graph-background { opacity: .55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .git-flow { display: none; }
+    .git-graph-background::before, .git-graph-background::after { filter: none; }
+  }
+}
