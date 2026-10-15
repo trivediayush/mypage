@@ -647,3 +647,39 @@
     .contact-card:hover::before { opacity: 0; }
   }
 }
+
+
+/* Soft, consistent geometry: gently rounded, never pill-shaped by default. */
+:root {
+  --radius: 0.45rem;
+}
+@layer base {
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+@layer components {
+  .hero-stage {
+    border-radius: 0.85rem;
+    overflow: clip;
+  }
+  .project-card,
+  .experience-card,
+  .client-card,
+  .credential-card,
+  .service-card,
+  .writing-card,
+  .contact-card {
+    border-radius: 0.7rem;
+  }
+  input, textarea, select {
+    border-radius: 0.45rem;
+  }
+  .portfolio-shell button:not([class*="rounded-full"]),
+  .portfolio-shell a:not([class*="rounded-full"]) {
+    transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+    transition-duration: 180ms;
+    transition-timing-function: ease-out;
+  }
+}
