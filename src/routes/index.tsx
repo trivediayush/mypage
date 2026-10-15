@@ -13,20 +13,20 @@ import { SiteFooter } from "@/components/portfolio/SiteFooter";
 import { PortfolioPreloader } from "@/components/portfolio/PortfolioPreloader";
 import { profile, services } from "@/content/portfolio";
 
-const title = "Ayush Trivedi — DevOps Engineer";
+const title = "Ayush Trivedi | DevOps Engineer & Cloud Infrastructure";
 const description =
-  "DevOps Engineer working across AWS, Azure, Google Cloud, Kubernetes, CI/CD, Infrastructure as Code, and DevSecOps. Selected engineering and freelance work.";
+  "DevOps Engineer focused on AWS, Azure, Kubernetes, Terraform, CI/CD automation, cloud infrastructure, and DevSecOps. Explore infrastructure projects, technical skills, and freelance work.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
-      { name: "description", content: description },
+      { name: "description", content: description },\n      { name: "robots", content: "index, follow, max-image-preview:large" },\n      { name: "keywords", content: "DevOps Engineer, Cloud Infrastructure, AWS, Microsoft Azure, Kubernetes, Terraform, CI/CD, Infrastructure as Code, DevSecOps, Platform Engineering, India" },\n      { property: "og:locale", content: "en_IN" },\n      { property: "og:site_name", content: "Ayush Trivedi — DevOps Portfolio" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
-      { name: "twitter:title", content: title },
+      { name: "twitter:card", content: "summary" },\n      { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Person",
           name: profile.name,
-          jobTitle: "DevOps Engineer",
+          jobTitle: "DevOps Engineer",\n          url: profile.links.github,
           description,
           email: `mailto:${profile.email}`,
           telephone: profile.phones,
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
             "Docker",
             "Terraform",
             "CI/CD",
-            "DevSecOps",
+            "DevSecOps",\n            "Cloud Infrastructure",\n            "Platform Engineering",\n            "Infrastructure Automation",\n            "Observability",
           ],
           sameAs: [profile.links.linkedin, profile.links.github, profile.links.medium],
         }),
