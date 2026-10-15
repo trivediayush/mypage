@@ -10,7 +10,6 @@ import { Writing } from "@/components/portfolio/Writing";
 import { ClientWork } from "@/components/portfolio/ClientWork";
 import { Contact } from "@/components/portfolio/Contact";
 import { SiteFooter } from "@/components/portfolio/SiteFooter";
-import { ThreeSiteField } from "@/components/portfolio/ThreeSiteField";
 import { PortfolioPreloader } from "@/components/portfolio/PortfolioPreloader";
 import { profile, services } from "@/content/portfolio";
 
@@ -87,7 +86,6 @@ function Portfolio() {
   return (
     <div className="portfolio-shell min-h-screen bg-background">
       <PortfolioPreloader />
-      <ThreeSiteField />
       <NavRail />
       <main className="relative z-10">
         <Intro />
